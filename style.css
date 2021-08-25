@@ -1,3 +1,11 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -99,7 +107,6 @@ vertical-align:middle;
 {
 	height: 660px;
 	width: 1350px;
-	/*background-color: red;*/
 }
 header
 {
@@ -113,7 +120,7 @@ section
 	height: 550px;
 
 	width: 1538px;
-	background-color: rgb(184, 231, 243);
+	background-color: rgb(182, 226, 235);
 }
 
 .logo
@@ -133,29 +140,36 @@ li a
 	text-decoration: none;
 	font-size: 20px;
 }
-
+/*nav
+{
+	float: right;
+	word-spacing: 30px;
+	padding: 20px;
+}
+nav li 
+{
+	display: inline-block;
+	line-height: 80px;
+}*/
 .box
 {
-	height: 300px;
+	height: 250px;
 	width: 450px;
 	background-color: #030002;
 	margin: 70px auto;
-	opacity: .6;
+	opacity: .5;
 	color: white;
 }
-
-
 
 /*--------------------------------st_login-----------------------------*/
 
 
 .log_img
 {
-	height: 550px;
+	height: 650px;
 	margin-top: 0px;
 	
 }
-	
 .box1
 {
 	height: 450px;
@@ -180,7 +194,7 @@ input
 
 .box2
 {
-	height: 620px;
+	height: 700px;
 	width: 450px;
 	background-color: black;
 	margin: 0px auto;

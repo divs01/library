@@ -27,7 +27,7 @@
 <body>
 
 <section>
-  <div class="log_img">
+  <div class="">
    <br>
     <div class="box1">
         <h1 style="text-align: center; font-size: 35px;font-family: Lucida Console;">Library Management System</h1>
@@ -42,7 +42,7 @@
       
       <p style="color: white; padding-left: 15px;">
         <br><br>
-        <a style="color:yellow; text-decoration: none;" href="update_password.php">Forgot password?</a> &nbsp &nbsp &nbsp &nbsp &nbsp 
+        <a style="color:yellow; text-decoration: none;" href="update_password1.php">Forgot password?</a> &nbsp &nbsp &nbsp &nbsp &nbsp 
         New to this website?<a style="color: yellow; text-decoration: none;" href="registration.php">&nbspSign Up</a>
       </p>
     </form>
@@ -80,7 +80,7 @@
 
         ?>
           <script type="text/javascript">
-            window.location="profile.php"
+            window.location="../navbar.php"
           </script>
         <?php
       }

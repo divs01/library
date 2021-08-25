@@ -3,7 +3,6 @@
   include "navbar.php";
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +19,7 @@
 		body {
   font-family: "Lato", sans-serif;
   transition: background-color .5s;
+  
 }
 
 .sidenav {
@@ -100,8 +100,8 @@
                 ?>
             </div><br><br>
 
- 
-  <div class="h"> <a href="books.php">Books</a></div>
+  
+  <div class="h"> <a href="add.php">Add Books</a> </div> 
   <div class="h"> <a href="request.php">Book Request</a></div>
   <div class="h"> <a href="issue_info.php">Issue Information</a></div>
   <div class="h"><a href="expired.php">Expired List</a></div>
@@ -135,17 +135,13 @@ function closeNav() {
 					<span class="glyphicon glyphicon-search"></span>
 				</button>
 		</form>
-	</div>
-	<!--___________________request book__________________-->
-	<div class="srch">
 		<form class="navbar-form" method="post" name="form1">
 			
 				<input class="form-control" type="text" name="bid" placeholder="Enter Book ID" required="">
-				<button style="background-color: #6db6b9e6;" type="submit" name="submit1" class="btn btn-default">Request
+				<button style="background-color: #6db6b9e6;" type="submit" name="submit1" class="btn btn-default">Delete
 				</button>
 		</form>
 	</div>
-
 
 	<h2>List Of Books</h2>
 	<?php
@@ -220,27 +216,27 @@ function closeNav() {
 			}
 		echo "</table>";
 		}
-
 		if(isset($_POST['submit1']))
 		{
 			if(isset($_SESSION['login_user']))
 			{
-				mysqli_query($db,"INSERT INTO issue_book Values('$_SESSION[login_user]', '$_POST[bid]', '', '', '');");
+				mysqli_query($db,"DELETE from books where bid = '$_POST[bid]'; ");
 				?>
 					<script type="text/javascript">
-						window.location="request.php"
+						alert("Delete Successful.");
 					</script>
 				<?php
 			}
 			else
 			{
-				?>
+							?>
 					<script type="text/javascript">
-						alert("You must login to Request a book");
+						alert("Please Login First.");
 					</script>
 				<?php
 			}
 		}
+		
 
 	?>
 </div>

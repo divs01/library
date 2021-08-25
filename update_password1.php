@@ -20,7 +20,7 @@
 			height: 400px;
 			margin:100px auto;
 			background-color: black;
-			opacity: .7;
+			opacity: .8;
 			color: white;
 			padding: 27px 15px;
 		}
@@ -49,7 +49,7 @@
 
 		if(isset($_POST['submit']))
 		{
-			if(mysqli_query($db,"UPDATE admin SET password='$_POST[password]' WHERE username='$_POST[username]'
+			if(mysqli_query($db,"UPDATE student SET password='$_POST[password]' WHERE username='$_POST[username]'
 			AND email='$_POST[email]' ;"))
 			{
 				?>
@@ -59,6 +59,7 @@
 
 				<?php
 			}
+			
 		}
 	?></div>
 </body>

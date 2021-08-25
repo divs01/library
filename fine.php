@@ -123,11 +123,60 @@ function closeNav() {
 
 	<!--__________________________search bar________________________-->
 <div class="container">
+	<div class="srch">
+		<form class="navbar-form" method="post" name="form1">
+			
+				<input class="form-control" type="text" name="search" placeholder="Student username.." required="">
+				<button style="background-color: #6db6b9e6;" type="submit" name="submit" class="btn btn-default">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+		</form>
+	</div>
 
 	<h2>List Of Students</h2>
 	<?php
 
-	$res=mysqli_query($db,"SELECT * FROM `fine` where username='$_SESSION[login_user]' ;");
+		if(isset($_POST['submit']))
+		{
+			$q=mysqli_query($db,"SELECT * FROM `fine` where username like '%$_POST[search]%' ");
+
+			if(mysqli_num_rows($q)==0)
+			{
+				echo "Sorry! No student found with that username. Try searching again.";
+			}
+			else
+			{
+		echo "<table class='table table-bordered table-hover' >";
+			echo "<tr style='background-color: #6db6b9e6;'>";
+				//Table header
+				echo "<th>"; echo " Username ";	echo "</th>";
+				echo "<th>"; echo " Bid ";  echo "</th>";
+				echo "<th>"; echo " Returned ";  echo "</th>";
+				echo "<th>"; echo " Days ";  echo "</th>";
+				echo "<th>"; echo " Fine ";  echo "</th>";
+				echo "<th>"; echo " Status ";  echo "</th>";
+			echo "</tr>";	
+
+			while($row=mysqli_fetch_assoc($q))
+			{
+				echo "<tr>";
+				
+				echo "<td>"; echo $row['username']; echo "</td>";
+				echo "<td>"; echo $row['bid']; echo "</td>";
+				echo "<td>"; echo $row['returned']; echo "</td>";
+				echo "<td>"; echo $row['day']; echo "</td>";
+				echo "<td>"; echo $row['fine']; echo "</td>";
+				echo "<td>"; echo $row['status']; echo "</td>";
+
+				echo "</tr>";
+			}
+		echo "</table>";
+			}
+		}
+			/*if button is not pressed.*/
+		else
+		{
+	$res=mysqli_query($db,"SELECT * FROM `fine`;");
 
 		echo "<table class='table table-bordered table-hover' >";
 			echo "<tr style='background-color: #6db6b9e6;'>";
@@ -136,7 +185,7 @@ function closeNav() {
 				echo "<th>"; echo " Bid ";  echo "</th>";
 				echo "<th>"; echo " Returned ";  echo "</th>";
 				echo "<th>"; echo " Days ";  echo "</th>";
-				echo "<th>"; echo " Fines ";  echo "</th>";
+				echo "<th>"; echo " Fine ";  echo "</th>";
 				echo "<th>"; echo " Status ";  echo "</th>";
 			echo "</tr>";	
 
@@ -154,7 +203,7 @@ function closeNav() {
 				echo "</tr>";
 			}
 		echo "</table>";
-		
+		}
 
 	?>
 </div>

@@ -1,7 +1,6 @@
 <?php 
 	include "connection.php";
 	include "navbar.php";
-	
  ?>
  <!DOCTYPE html>
  <html>
@@ -11,29 +10,30 @@
  		.wrapper
  		{
  			width: 300px;
-			height: 600px;
  			margin: 0 auto;
  			color: white;
  		}
  	</style>
  </head>
- <body style=" background-color: #004528; ">
+ <body style="background-color: #004528; ">
  	<div class="container">
  		<form action="" method="post">
- 			<button class="btn btn-default" style="float: right; width: 70px;" name="submit1">Edit</button>
+ 			<button class="btn btn-default" style="float: right; width: 70px;" name="submit1" type="submit">Edit</button>
  		</form>
  		<div class="wrapper">
  			<?php
 
- 				if(isset($_POST['submit1']))
- 				{
- 					?>
- 						<script type="text/javascript">
- 							window.location="edit.php"
- 						</script>
- 					<?php
- 				}
- 				$q=mysqli_query($db,"SELECT * FROM student where username='$_SESSION[login_user]' ;");
+ 			if(isset($_POST['submit1']))
+ 			{
+ 				?>
+ 				<script type="text/javascript">
+ 					window.location="edit.php"
+ 				</script>
+ 				<?php
+ 			}
+
+
+ 				$q=mysqli_query($db,"SELECT * FROM admin where username='$_SESSION[login_user]' ;");
  			?>
  			<h2 style="text-align: center;">My Profile</h2>
 

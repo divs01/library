@@ -24,7 +24,7 @@
 		}
 		
 		body {
-			background-image: url("images/1111.jpg");
+			background-image: url("");
 			background-repeat: no-repeat;
   	font-family: "Lato", sans-serif;
   	transition: background-color .5s;
